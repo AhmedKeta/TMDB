@@ -1,0 +1,6 @@
+.search-page{
+    color: aliceblue;
+}
+.search-page .movie-card__details{
+    background-color: rgba(240, 248, 255, 0.795);
+}
