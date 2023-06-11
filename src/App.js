@@ -2,15 +2,18 @@ import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes";
+import { Provider } from "react-redux";
+import store from "./global/store";
 
 
 function App() {
 
   return (
-    <BrowserRouter>
-      <AppRoutes></AppRoutes>
-    </BrowserRouter>
-
+    <Provider store={store}>
+      <BrowserRouter>
+        <AppRoutes></AppRoutes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

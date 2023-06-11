@@ -4,8 +4,10 @@ import { getMovies } from "../../api/moviesApi";
 import Loading from "../../components/Loading/Loading";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import { Button } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 const Movies = () => {
+  const favorites = useSelector((state) => state.favorites.list);
   const [page, setPage] = useState(1);
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -35,7 +37,6 @@ const Movies = () => {
         setIsLoading(false);
       }
 
-      console.log(moviesData);
     })();
   }, [page]);
 
@@ -46,7 +47,7 @@ const Movies = () => {
       ) : (
         <div className="row justify-content-around">
           {movies.map((movie) => {
-            return <MovieCard movie={movie} />;
+            return <MovieCard movie={movie} key={movie.id} favorite={ favorites.includes(movie.id)} />;
           })}
           <div className="d-flex justify-content-around prev-next-btn">
             {page > 1 ? (

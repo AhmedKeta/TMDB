@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { searchMovies } from "../../api/moviesApi";
 import "./Search.css";
-import { Link } from "react-router-dom";
+import MovieCard from "../../components/MovieCard/MovieCard";
+import { useSelector } from "react-redux";
 function Search() {
+  const favorites = useSelector((state) => state.favorites.list);
+
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
 
@@ -37,16 +40,15 @@ function Search() {
       <Row>
         <Col>
           <h2>Results</h2>
-          <ul>
+          <div className="row justify-content-around">
             {movies.map((movie) => (
-              <Link
+              <MovieCard
+                movie={movie}
                 key={movie.id}
-                to={`/movie/${movie.id}`}
-                className="btn btn-primary movie-card__details">
-                {movie.title}
-              </Link>
+                favorite={favorites.includes(movie.id)}
+              />
             ))}
-          </ul>
+          </div>
         </Col>
       </Row>
     </div>

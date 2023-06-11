@@ -13,3 +13,16 @@
     width: 100%;
     justify-self: self-end;
 }
+.movie-card__favorite {
+  color: gold;
+}
+
+.movie-card__not-favorite {
+  color: #0006617e;
+
+}
+.movie-card__favorite:hover,
+.movie-card__not-favorite:hover {
+cursor: pointer;
+}
+
