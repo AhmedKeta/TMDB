@@ -5,3 +5,10 @@
     min-height: 100vh;
     color: aliceblue;
 }
+.show-load{
+    display: block;
+    top: 50vh
+}
+.hide-load{
+    display: none;
+}

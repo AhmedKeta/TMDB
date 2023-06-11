@@ -1,5 +1,7 @@
 import axios from "axios";
-import Loading from "../components/Loading/Loading";
+// import { useDispatch } from "react-redux";
+import { show, hide } from "../global/slices/loading";
+import store from "../global/store";
 
 const API_KEY = "bd8cfc32124262c387bf1be89767362c";
 
@@ -12,9 +14,9 @@ const axiosInstance = axios.create({
 });
 
 // Add a request interceptor
-axios.interceptors.request.use(
+axiosInstance.interceptors.request.use(
   function (config) {
-      Loading.show();
+    store.dispatch(show());
     return config;
   },
   function (error) {
@@ -23,9 +25,9 @@ axios.interceptors.request.use(
 );
 
 // Add a response interceptor
-axios.interceptors.response.use(
+axiosInstance.interceptors.response.use(
   function (response) {
-        Loading.hide();
+    store.dispatch(hide());
     return response;
   },
   function (error) {

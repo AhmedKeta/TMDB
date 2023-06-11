@@ -2,7 +2,6 @@ import axiosInstance from "./axiosConfig";
 export const getMovies = async (page = 1) => {
   try {
       const response = await axiosInstance.get("/3/movie/popular", { params: { page } });
-      console.log(response)
     return response.data.results;
   } catch (error) {
     return console.log(error);

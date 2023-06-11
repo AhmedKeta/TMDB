@@ -17,7 +17,6 @@ const favoritesSlice = createSlice({
         state.list.push(action.payload);
         console.log(state.list)
         state.counter++;
-        console.log(state.counter)
       }
     },
   },
