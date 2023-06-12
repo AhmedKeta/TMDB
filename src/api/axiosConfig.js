@@ -2,14 +2,15 @@ import axios from "axios";
 // import { useDispatch } from "react-redux";
 import { show, hide } from "../global/slices/loading";
 import store from "../global/store";
+import { useContext } from "react";
+import LanguageContext from "../context/language";
 
-const API_KEY = "bd8cfc32124262c387bf1be89767362c";
+const API_KEY = process.env.REACT_APP_TMDB_KEY;
 
 const axiosInstance = axios.create({
-  baseURL: "https://api.themoviedb.org",
+  baseURL: process.env.REACT_APP_TMDB_BASE_URL,
   params: {
     api_key: API_KEY,
-    language: "en-US",
   },
 });
 

@@ -7,3 +7,20 @@
   color: #fff;
   z-index: 100;
 }
+/* Default styles for left-to-right languages */
+body {
+  direction: ltr;
+}
+
+/* Styles for right-to-left languages */
+.rtl {
+  direction: rtl;
+}
+
+/* Example styles for right-to-left languages */
+.rtl h1 {
+  text-align: right;
+}
+
+.rtl .me-auto.navbar-nav {
+display: contents;}

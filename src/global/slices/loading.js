@@ -5,12 +5,10 @@ const loadingSlice = createSlice({
   initialState: false,
   reducers: {
     show: (state, action) => {
-      // state = true;
-      return true
+      return true;
     },
     hide: (state, action) => {
-      // state = false;
-      return false
+      return false;
     },
   },
 });

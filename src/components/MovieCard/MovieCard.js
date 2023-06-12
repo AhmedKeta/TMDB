@@ -15,7 +15,7 @@ const MovieCard = ({ movie, favorite = false }) => {
         variant="top"
         src={
           movie.poster_path
-            ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+            ? `${process.env.REACT_APP_TMDB_IMG_BASE}${movie.poster_path}`
             : "https://img.freepik.com/free-vector/3d-realistic-illustration-open-movie-clapperboard-clapper-isolated-background_1441-1783.jpg?w=740&t=st=1686481483~exp=1686482083~hmac=e17deab8a1c841ebaa91f1fd31a41e661b8b7f8b80a33b2af36557c8a3dd95bc"
         }
         className="movie-card__img"
@@ -36,7 +36,8 @@ const MovieCard = ({ movie, favorite = false }) => {
         <Card.Text>{movie.overview}</Card.Text>
         <Link
           to={`/movie/${movie.id}`}
-          className="btn btn-dark movie-card__details">
+          className="btn btn-dark movie-card__details"
+        >
           Details
         </Link>
       </Card.Body>

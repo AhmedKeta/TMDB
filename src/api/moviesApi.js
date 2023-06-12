@@ -1,26 +1,31 @@
 import axiosInstance from "./axiosConfig";
-export const getMovies = async (page = 1) => {
+export const getMovies = async (page = 1, language = "en-us") => {
   try {
-      const response = await axiosInstance.get("/3/movie/popular", { params: { page } });
+    const response = await axiosInstance.get("/3/movie/popular", {
+      params: { page, language },
+    });
     return response.data.results;
   } catch (error) {
     return console.log(error);
   }
 };
-export const getMovieDetails = async (movieId) => {
+export const getMovieDetails = async (movieId, language = "en-us") => {
   try {
-    const response = await axiosInstance.get(`/3/movie/${movieId}`);
+    const response = await axiosInstance.get(`/3/movie/${movieId}`, {
+      params: { language },
+    });
     return response.data;
   } catch (error) {
     return console.log(error);
   }
 };
-export const searchMovies = async (query, page = 1) => {
+export const searchMovies = async (query, language = "en-us") => {
   try {
-        const response = await axiosInstance
-            .get("/3/search/movie", { params: { query, page } });
-        return response.data.results;
-    } catch (error) {
-        return console.log(error);
-    }
+    const response = await axiosInstance.get("/3/search/movie", {
+      params: { query, language },
+    });
+    return response.data.results;
+  } catch (error) {
+    return console.log(error);
+  }
 };
