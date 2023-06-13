@@ -6,14 +6,13 @@
   padding-top: 12px;
 }
 .movie-card:hover {
-  scale: 1.05;
+  scale: 1.01;
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
-  transition: scale 0.5s;
-
+  transition: 0.5s;
 }
-.movie-card__details{
-    width: 100%;
-    justify-self: self-end;
+.movie-card__details {
+  width: 100%;
+  justify-self: self-end;
 }
 .movie-card__favorite {
   color: gold;
@@ -21,10 +20,8 @@
 
 .movie-card__not-favorite {
   color: #0006617e;
-
 }
 .movie-card__favorite:hover,
 .movie-card__not-favorite:hover {
-cursor: pointer;
+  cursor: pointer;
 }
-
