@@ -22,7 +22,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [showErrorModal, setShowErrorModal] = useState(false);
-  const { language, setLanguage } = useContext(LanguageContext);
+  const { language } = useContext(LanguageContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -146,7 +146,7 @@ const Register = () => {
   };
   return (
     <Form onSubmit={handleSubmit} noValidate>
-      <h1> {language === "ar" ? ":التسجيل" : "Register:"}</h1>
+      <h1 className="register-header"> {language === "ar" ? ":التسجيل" : "Register:"}</h1>
       <Form.Group controlId="formName">
         <Form.Label>{language === "ar" ? "الاسم:" : "Name:"}</Form.Label>
         <div className="input-group">

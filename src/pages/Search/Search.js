@@ -27,7 +27,7 @@ function Search() {
     <div className="search-page">
       <Row>
         <Col>
-          <h1>{language === "ar" ? "ابحث عن فيلمك" : "Search Movies "}</h1>
+          <h1 className="search-header">{language === "ar" ? "ابحث عن فيلمك" : "Search Movies "}</h1>
           <Form>
             <Form.Group controlId="formQuery">
               <Form.Label>{language === "ar" ? "ابحث:" : "Search:"}</Form.Label>

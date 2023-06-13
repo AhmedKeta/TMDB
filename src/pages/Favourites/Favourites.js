@@ -19,6 +19,8 @@ const Favorites = () => {
         });
         const movieResults = await Promise.all(moviePromises);
         setMovies(movieResults);
+      } else {
+        setMovies([]);
       }
     })();
   }, [favorites, language]);
@@ -27,7 +29,7 @@ const Favorites = () => {
     <>
       {
         <div className="row justify-content-around">
-          {movies.length &&
+          {movies.length ? (
             movies.map((movie) => {
               return (
                 <MovieCard
@@ -36,7 +38,13 @@ const Favorites = () => {
                   favorite={favorites.includes(movie.id)}
                 />
               );
-            })}
+            })
+          ) : (
+            <h1 className="movies-header">
+              {" "}
+              {language === "ar" ? "ليس لديك أفلام مفضلة" : "You have no favorites"}
+            </h1>
+          )}
         </div>
       }
     </>

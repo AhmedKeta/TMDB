@@ -2,3 +2,9 @@
     margin: 25px;
     max-height: fit-content;
 }
+.movies-header{
+        margin-top: 15px;
+
+    text-align: center;
+    text-shadow: 3px 3px 3px black;
+}

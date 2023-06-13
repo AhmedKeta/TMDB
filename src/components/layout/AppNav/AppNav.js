@@ -8,7 +8,7 @@ import LanguageContext from "../../../context/language";
 function AppNav({ children }) {
   const { language, setLanguage } = useContext(LanguageContext);
 
-  const favoritesCounter = useSelector((state) => state.favorites.counter);
+  const favoritesCounter = useSelector((state) => state.favorites.list.length);
 
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
@@ -19,12 +19,15 @@ function AppNav({ children }) {
   const handleProfileDropdownClose = () => {
     setShowProfileDropdown(false);
   };
-
+  const changeLanguage = () => {
+    localStorage.setItem("language", language === "en-us" ? "ar" : "en-us");
+    setLanguage(language === "en-us" ? "ar" : "en-us");
+  };
   return (
     <Navbar bg="dark" expand="md" variant="dark" className="header">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          {language === "ar" ? "أفلامى" : "My movies"}
+          {language === "ar" ? "نجم سنيمائى" : "Movie Star"}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar" />
         <Navbar.Collapse id="navbar">
@@ -63,10 +66,7 @@ function AppNav({ children }) {
               <NavDropdown.Item as={Link} to="/login">
                 {language === "ar" ? "تسجيل الدخول/ الخروج" : "Login/ Logout"}
               </NavDropdown.Item>
-              <NavDropdown.Item
-                onClick={() =>
-                  setLanguage(language === "en-us" ? "ar" : "en-us")
-                }>
+              <NavDropdown.Item onClick={changeLanguage}>
                 {language === "ar" ? "اللغة" : "language"}
 
                 <span className="badge bg-secondary ml-1">{language}</span>

@@ -13,8 +13,10 @@ import AOS from "aos";
 AOS.init();
 
 function App() {
-  const [language, setLanguage] = useState("en-us");
-    const className = language.startsWith("ar") ? "rtl" : "ltr";
+  const [language, setLanguage] = useState(
+    localStorage.getItem("language") || "en-us"
+  );
+  const className = language.startsWith("ar") ? "rtl" : "ltr";
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
