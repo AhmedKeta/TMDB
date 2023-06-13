@@ -1,0 +1,17 @@
+.about-me{
+padding: 65px;
+background-color: rgba(0, 0, 0, 0.74);
+}
+.about-me p{
+    text-align: justify;
+}
+.about-me .transparent-button{
+    margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: transparent;
+  color: rgb(255, 255, 255);
+}
+.about-me .transparent-button:hover {
+  background-color: rgba(9, 29, 126, 0.7);
+  cursor: pointer;
+}

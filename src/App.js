@@ -7,6 +7,11 @@ import store from "./global/store";
 import { Suspense, useState } from "react";
 import Loading from "./components/Loading/Loading";
 import LanguageContext from "./context/language";
+import "aos/dist/aos.css";
+import AOS from "aos";
+
+AOS.init();
+
 function App() {
   const [language, setLanguage] = useState("en-us");
     const className = language.startsWith("ar") ? "rtl" : "ltr";

@@ -10,7 +10,14 @@ import { useDispatch } from "react-redux";
 const MovieCard = ({ movie, favorite = false }) => {
   const dispatch = useDispatch();
   return (
-    <Card style={{ width: "22rem" }} className="movie-card">
+    <Card
+      style={{ width: "22rem" }}
+      className="movie-card"
+      data-aos="fade-up "
+      data-aos-duration="1000"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-delay="100"
+    >
       <Card.Img
         variant="top"
         src={
@@ -36,8 +43,7 @@ const MovieCard = ({ movie, favorite = false }) => {
         <Card.Text>{movie.overview}</Card.Text>
         <Link
           to={`/movie/${movie.id}`}
-          className="btn btn-dark movie-card__details"
-        >
+          className="btn btn-dark movie-card__details">
           Details
         </Link>
       </Card.Body>

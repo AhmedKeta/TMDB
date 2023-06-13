@@ -6,12 +6,12 @@
   align-items: center;
 }
 
-.not-found {
+.not-found-container .not-found {
   text-align: center;
   color: #fff;
 }
 
-.not-found h1 {
+.not-found-container .not-found h1 {
   font-size: 6rem;
   margin-bottom: 2rem;
 }
@@ -21,7 +21,7 @@
   justify-content: center;
 }
 
-.bar {
+.not-found-container .bar {
   width: 5px;
   height: 25px;
   margin-right: 3px;
@@ -31,31 +31,31 @@
   animation-timing-function: ease-in-out;
 }
 
-.bar1 {
+.not-found-container .bar1 {
   background-color: #fff;
 }
 
-.bar2 {
+.not-found-container .bar2 {
   background-color: #e4e4e4;
   animation-delay: 0.2s;
 }
 
-.bar3 {
+.not-found-container .bar3 {
   background-color: #dcdcdc;
   animation-delay: 0.4s;
 }
 
-.bar4 {
+.not-found-container .bar4 {
   background-color: #c8c8c8;
   animation-delay: 0.6s;
 }
 
-.bar5 {
+.not-found-container .bar5 {
   background-color: #b0b0b0;
   animation-delay: 0.8s;
 }
 
-.bar6 {
+.not-found-container .bar6 {
   background-color: #888;
   animation-delay: 1s;
 }
