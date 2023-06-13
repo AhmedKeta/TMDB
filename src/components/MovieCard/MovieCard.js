@@ -16,7 +16,7 @@ const MovieCard = ({ movie, favorite = false }) => {
       data-aos="fade-up "
       data-aos-duration="1000"
       data-aos-anchor-placement="top-bottom"
-      data-aos-delay="100"
+      data-aos-delay="500"
     >
       <Card.Img
         variant="top"
