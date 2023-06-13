@@ -55,6 +55,7 @@ const Register = () => {
     if (birthdayError) errors.push(birthdayError);
     if (genderError) errors.push(genderError);
     if (passwordError) errors.push(passwordError);
+    if (!name || !email || !birthday || !gender || !password) errors.push("!!");
     if (errors.length > 0) {
       setShowErrorModal(true);
     } else {
@@ -114,7 +115,11 @@ const Register = () => {
     const monthDiff = today.getMonth() - selectedDate.getMonth();
 
     if (age < 18 || (age === 18 && monthDiff < 0) || inputBirthday === "") {
-      setBirthdayError(        language === "ar" ? "يجب أن يكون عمرك أكبر من 18 عامَا!" : "You must be at least 18 years old.");
+      setBirthdayError(
+        language === "ar"
+          ? "يجب أن يكون عمرك أكبر من 18 عامَا!"
+          : "You must be at least 18 years old."
+      );
     } else {
       setBirthdayError("");
     }
@@ -136,7 +141,11 @@ const Register = () => {
     setPassword(inputPassword);
 
     if (inputPassword.length < 8) {
-      setPasswordError(        language === "ar" ? " كلمة المرور يجب أن تكون مكونة من 8 أحرف على الأقل!" : "Your password must be at least 8 characters.");
+      setPasswordError(
+        language === "ar"
+          ? " كلمة المرور يجب أن تكون مكونة من 8 أحرف على الأقل!"
+          : "Your password must be at least 8 characters."
+      );
     } else {
       setPasswordError("");
     }
@@ -146,7 +155,10 @@ const Register = () => {
   };
   return (
     <Form onSubmit={handleSubmit} noValidate>
-      <h1 className="register-header"> {language === "ar" ? ":التسجيل" : "Register:"}</h1>
+      <h1 className="register-header">
+        {" "}
+        {language === "ar" ? ":التسجيل" : "Register:"}
+      </h1>
       <Form.Group controlId="formName">
         <Form.Label>{language === "ar" ? "الاسم:" : "Name:"}</Form.Label>
         <div className="input-group">
