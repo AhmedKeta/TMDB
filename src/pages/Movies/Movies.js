@@ -46,28 +46,33 @@ const Movies = () => {
       </h1>
       {
         <div className="row justify-content-around">
-          {movies.length &&
-            movies.map((movie) => {
-              return (
-                <MovieCard
-                  movie={movie}
-                  key={movie.id}
-                  favorite={favorites.includes(movie.id)}
-                />
-              );
-            })}
-          <div className="d-flex justify-content-around prev-next-btn">
-            {page > 1 ? (
-              <Button variant="primary" onClick={handlePrevPage}>
-                {language === "ar" ? "السابقة" : "Previous Page"}
+          {movies.length
+            ? movies.map((movie) => {
+                return (
+                  <MovieCard
+                    movie={movie}
+                    key={movie.id}
+                    favorite={favorites.includes(movie.id)}
+                  />
+                );
+              })
+            : ""}{" "}
+          {movies.length ? (
+            <div className="d-flex justify-content-around prev-next-btn">
+              {page > 1 ? (
+                <Button variant="primary" onClick={handlePrevPage}>
+                  {language === "ar" ? "السابقة" : "Previous Page"}
+                </Button>
+              ) : (
+                ""
+              )}
+              <Button variant="primary" onClick={handleNextPage}>
+                {language === "ar" ? "التالية" : "Next Page"}
               </Button>
-            ) : (
-              ""
-            )}
-            <Button variant="primary" onClick={handleNextPage}>
-              {language === "ar" ? "التالية" : "Next Page"}
-            </Button>
-          </div>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       }
     </>
