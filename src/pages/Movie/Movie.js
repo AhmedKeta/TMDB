@@ -72,9 +72,7 @@ const Movie = () => {
           </Card>
         </Col>
         <Col md={8}>
-          <Card
-            className="movie-details__body"
-            >
+          <Card className="movie-details__body">
             <Card.Body>
               <Card.Title>
                 <a href={movie.homepage} target="_blank" rel="noreferrer">
@@ -113,10 +111,6 @@ const Movie = () => {
                     </sub>
                   </div>
                 </p>
-              </Card.Text>
-              <Card.Text>
-                <span className="font-bold">Vote Count:</span>{" "}
-                {movie.vote_count}
               </Card.Text>
               <Card.Text>
                 <span className="font-bold">Language:</span>{" "}
