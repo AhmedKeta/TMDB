@@ -41,7 +41,6 @@ const Movies = () => {
   return (
     <>
       <h1 className="movies-header">
-        {" "}
         {language === "ar" ? "الأفلام الشائعة" : "Popular Movies"}
       </h1>
       {

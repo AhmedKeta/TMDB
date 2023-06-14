@@ -4,15 +4,15 @@ import MyFocus from "../MyFocus/MyFocus";
 
 const Skills = () => {
   const skills = [
-    { name: "HTML", value: 75 },
-    { name: "CSS", value: 85 },
-    { name: "JavaScript", value: 80 },
-    { name: "Node.js", value: 65 },
-    { name: "React", value: 60 },
-    { name: "Anguler", value: 65 },
-    { name: "Express", value: 75 },
-    { name: "Mongo", value: 70 },
-    { name: "SQL", value: 65 },
+    { name: "HTML", value: 75, key: 1 },
+    { name: "CSS", value: 85, key: 2 },
+    { name: "JavaScript", value: 80, key: 3 },
+    { name: "Node.js", value: 65, key: 4 },
+    { name: "React", value: 60, key: 5 },
+    { name: "Anguler", value: 65, key: 6 },
+    { name: "Express", value: 75, key: 7 },
+    { name: "Mongo", value: 70, key: 8 },
+    { name: "SQL", value: 65, key: 9 },
   ];
   return (
     <div
@@ -37,7 +37,7 @@ const Skills = () => {
           <MyFocus />
           <div className="chart-data col-12 col-md-5">
             {skills.map((skill) => {
-              return <SkillsChart skill={skill.name} value={skill.value} />;
+              return <SkillsChart skill={skill.name} value={skill.value} key = {skill.key} />;
             })}
           </div>
         </div>

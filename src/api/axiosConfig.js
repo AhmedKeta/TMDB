@@ -2,8 +2,7 @@ import axios from "axios";
 // import { useDispatch } from "react-redux";
 import { show, hide } from "../global/slices/loading";
 import store from "../global/store";
-import { useContext } from "react";
-import LanguageContext from "../context/language";
+
 
 const API_KEY = process.env.REACT_APP_TMDB_KEY;
 
