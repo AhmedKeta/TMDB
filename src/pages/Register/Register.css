@@ -1,28 +1,3 @@
-.input-group {
-  position: relative;
-}
-
-.input-group .input-icon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 12px;
-  font-size: 1.2em;
-  color: #6c757d;
-}
-.rtl .input-group .input-icon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: calc(100% - 28px);
-  font-size: 1.2em;
-  color: #6c757d;
-}
-
-.form-control.is-invalid {
-  border-color: red;
-  box-shadow: none;
-}
 .register-header{
       margin-top: 15px;
 

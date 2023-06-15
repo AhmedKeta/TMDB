@@ -60,7 +60,7 @@ function Footer() {
                 </a>
               </li>
             </ul>
-            <p>&copy; 2023 Keta.com. All rights reserved.</p>
+            <p>&copy; 2023 ahmed-M-Abd-ElKader  All rights reserved.</p>
           </Col>
         </Row>
       </Container>

@@ -107,7 +107,7 @@ const Movie = () => {
                   />
                   <div className="votes">
                     <sub>
-                      {movie.vote_average}({movie.vote_count} votes)
+                      {Math.round(movie.vote_average*10)/10}({movie.vote_count} votes)
                     </sub>
                   </div>
                 </p>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Form, Row, Col } from "react-bootstrap";
 import { searchMovies } from "../../api/moviesApi";
 import "./Search.css";
@@ -11,7 +11,7 @@ function Search() {
 
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-
+const searchInputRef = useRef()
   useEffect(() => {
     const fetchSearchResults = async () => {
       setResults([]);
@@ -22,18 +22,26 @@ function Search() {
     };
     fetchSearchResults();
   }, [query, language]);
+  useEffect(() => {
+searchInputRef.current.focus()
+  }, []);
 
   return (
     <div className="search-page">
       <Row>
         <Col>
-          <h1 className="search-header">{language === "ar" ? "ابحث عن فيلمك" : "Search Movies "}</h1>
+          <h1 className="search-header">
+            {language === "ar" ? "ابحث عن فيلمك" : "Search Movies "}
+          </h1>
           <Form>
             <Form.Group controlId="formQuery">
               <Form.Label>{language === "ar" ? "ابحث:" : "Search:"}</Form.Label>
               <Form.Control
+                ref={searchInputRef}
                 type="text"
-                placeholder={language === "ar" ? "اكتب اسم الفيلم" : "Enter a movie title"}
+                placeholder={
+                  language === "ar" ? "اكتب اسم الفيلم" : "Enter a movie title"
+                }
                 value={query}
                 onChange={(event) => {
                   setQuery(event.target.value);
